@@ -27,7 +27,7 @@ Diese Hausaufgabe soll dir helfen, das Arbeiten mit Git und GitHub weiter zu ver
 5. Wechsle zurück zum `master`-Branch (`git checkout master`).
 6. Führe `git merge experimenteller-eintrag` aus, um die Änderungen aus dem Branch zu übernehmen.
 
-**Zusatzaufgabe:** Falls es zu einem Merge-Konflikt kommt, löse ihn manuell und committe die bereinigte Version der Datei.
+**Zusatzaufgabe:** Falls es zu einem Merge-Konflikt kommt, löse ihn manuell und committe die bereinigte Version der Datei. D.h. die Dateien bearbeiten, adden, committen
 
 ---
 
