@@ -32,34 +32,5 @@ Diese Hausaufgabe soll dir helfen, das Arbeiten mit Git und GitHub weiter zu ver
    ```
 ---
 
-## **3. Zusatz: Arbeiten mit Branches (lokal)**
-
-1. Erstelle einen neuen Branch mit dem Namen `experimenteller-eintrag` (`git branch experimenteller-eintrag`).
-2. Wechsle in diesen Branch (`git checkout experimenteller-eintrag`).
-3. Füge eine neue Datei `ideen.md` hinzu und schreibe ein paar Notizen hinein.
-4. Speichere die Datei und committe sie mit einer passenden Nachricht.
-5. Wechsle zurück zum `master`-Branch (`git checkout master`).
-6. Führe `git merge experimenteller-eintrag` aus, um die Änderungen aus dem Branch zu übernehmen.
-
-**Zusatzaufgabe:** Falls es zu einem Merge-Konflikt kommt, löse ihn manuell und committe die bereinigte Version der Datei. D.h. die Dateien bearbeiten, adden, committen
-
----
-## **4. Zusatz: Arbeiten mit Branches (Github)**
-
-1. Erstelle einen neuen Branch `feature/update` lokal mit:
-   ```bash
-   git checkout -b feature/update
-   ```
-2. Bearbeite eine Datei oder füge eine neue hinzu, committe die Änderungen und pushe sie zurück nach GitHub.
-  ```bash
-  git add .
-  git commit -m "änderungen beschreiben"
-  git push -u origin feature/update
-  ```
-3. Wechsle zurück auf den Hauptbranch mit `git checkout master`
-
-**Zusatzaufgabe**: Wie kann ich den feature-Branch in meinen Hauptbranch mergen/zusammenführen? Hier gibt es verschiedene Möglichkeiten. Recherchiere und teste etwas aus :)
-
----
 
 🚀 **Mit dieser Hausaufgabe übst du die wichtigsten Git- und GitHub-Konzepte! Viel Erfolg!**
