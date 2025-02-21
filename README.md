@@ -9,14 +9,6 @@ git init
 ```
 🔹 Erstellt einen versteckten Ordner `.git`, der die gesamte Versionshistorie speichert.
 
-#### **📝 Aufgabe:**
-1. Erstelle einen neuen Ordner mit dem Namen `mein-projekt`.
-2. Wechsle in diesen Ordner mit `cd mein-projekt`.
-3. Initialisiere ein neues Git-Repository mit `git init`.
-4. Überprüfe, ob der `.git`-Ordner erstellt wurde.
-
----
-
 ### **1.2 Status der Dateien überprüfen**
 Zeigt den aktuellen Status der Dateien im Arbeitsverzeichnis:
 ```bash
@@ -24,118 +16,134 @@ git status
 ```
 🔹 Zeigt unversionierte, geänderte oder zum Commit vorgemerkte Dateien.
 
-#### **📝 Aufgabe:**
-1. Erstelle eine neue Datei `notizen.txt` im Ordner `mein-projekt`.
-2. Führe den Befehl `git status` aus und beobachte die Ausgabe.
-3. Was sagt Git über die Datei `notizen.txt`?
-
----
-
 ### **1.3 Dateien dem Staging-Bereich hinzufügen**
 Eine einzelne Datei hinzufügen:
 ```bash
 git add <dateiname>
 ```
-
-#### **📝 Aufgabe:**
-1. Füge die Datei `notizen.txt` mit `git add notizen.txt` zum Staging-Bereich hinzu.
-2. Überprüfe mit `git status`, ob die Datei nun im Staging-Bereich ist.
-
-**Zusatzaufgabe:**
-- Erstelle eine zweite Datei `todo.txt` und füge sie mit `git add .` zum Staging-Bereich hinzu.
-- Überprüfe mit `git status`, ob alle Dateien aufgenommen wurden.
-
----
+Alle geänderten Dateien hinzufügen:
+```bash
+git add .
+```
+🔹 `git add` speichert Änderungen im Staging-Bereich, aber noch nicht im Repository.
 
 ### **1.4 Änderungen committen**
 Änderungen dauerhaft im Repository speichern:
 ```bash
 git commit -m "Beschreibung der Änderung"
 ```
-
-#### **📝 Aufgabe:**
-1. Führe einen Commit mit der Nachricht `Initial commit` aus.
-2. Überprüfe mit `git log`, ob der Commit erfolgreich war.
-
-**Zusatzaufgabe:**
-- Füge eine dritte Datei `readme.md` hinzu, committe sie mit einer passenden Nachricht und überprüfe deine Git-Historie mit `git log --oneline`.
-
----
+🔹 Commits sollten eine prägnante, erklärende Nachricht enthalten.
 
 ### **1.5 Änderungen in der Historie ansehen**
 Alle bisherigen Commits anzeigen:
 ```bash
 git log
 ```
+Kompakte Ansicht:
+```bash
+git log --oneline --graph
+```
+🔹 Zeigt eine kürzere Darstellung der Commit-Historie.
 
-#### **📝 Aufgabe:**
-1. Erstelle mehrere Commits mit unterschiedlichen Änderungen.
-2. Verwende `git log`, um die Änderungen nachzuvollziehen.
-
-**Zusatzaufgabe:**
-- Nutze `git log --oneline --graph`, um die Historie in kompakter Form anzuzeigen.
+### **1.6 Unterschiede anzeigen**
+Unterschiede zwischen Arbeitsverzeichnis und Staging-Bereich:
+```bash
+git diff
+```
+Unterschiede zwischen Staging-Bereich und letztem Commit:
+```bash
+git diff --staged
+```
 
 ---
 
-### **2. GitHub & Verbindung mit lokalem Repository**
+## **2. GitHub & Verbindung mit lokalem Repository**
 
 ### **2.1 Repository von GitHub klonen**
 Ein bestehendes GitHub-Repository auf den lokalen Rechner kopieren:
 ```bash
 git clone <repository-url>
 ```
+🔹 Erstellt eine lokale Kopie des Repositories mit der gesamten Historie.
 
-#### **📝 Aufgabe:**
-1. Klone ein öffentliches GitHub-Repository auf deinen Rechner.
-2. Wechsle in das geklonte Repository und überprüfe die enthaltenen Dateien.
-
-**Zusatzaufgabe:**
-- Untersuche mit `git remote -v`, welche Verbindungen zu GitHub bestehen.
-
----
+### **2.2 Remote-Repository hinzufügen**
+Ein lokales Repository mit GitHub verknüpfen:
+```bash
+git remote add origin <repository-url>
+```
+🔹 `origin` ist der Standardname für das entfernte Repository.
 
 ### **2.3 Änderungen zu GitHub hochladen (Push)**
 Dateien nach GitHub senden:
 ```bash
-git push -u origin master
+git push -u origin main
 ```
+🔹 `-u` setzt die Verknüpfung, sodass künftige `git push` ohne zusätzliche Parameter funktioniert.
 
-#### **📝 Aufgabe:**
-1. Erstelle ein neues Repository auf GitHub. (Achtung: gib 'repo.new' in die Browser-Leiste ein). Wähle einen Namen und einen Owner aus. Lasse ansonsten alles auf default.
-2. Verbinde dein lokales Repository mit GitHub (`git remote add origin <URL>`). Den Befehl siehst du auch ganz unten auf der Seite, die sich nach dem Erstellen des Repos geöffnet hat.
-3. Führe `git push -u origin master` aus, um deine Änderungen hochzuladen.
-
-**Zusatzaufgabe:**
-- Erstelle einen neuen Branch `feature/xyz`, pushe diesen zu GitHub und überprüfe ihn im Web-Interface.
+### **2.4 Änderungen aus GitHub abrufen**
+Neueste Änderungen herunterladen, ohne sie zu mergen:
+```bash
+git fetch
+```
+Neueste Änderungen abrufen und mit dem aktuellen Branch mergen:
+```bash
+git pull
+```
+🔹 `git pull` kombiniert `git fetch` und `git merge`.
 
 ---
 
-### **3. Branches & Pull Requests**
+## **3. Branches & Pull Requests**
 
 ### **3.1 Arbeiten mit Branches**
 Einen neuen Branch erstellen:
 ```bash
 git branch feature-xyz
 ```
+In einen anderen Branch wechseln:
+```bash
+git checkout feature-xyz
+```
+Neuen Branch erstellen und direkt wechseln:
+```bash
+git checkout -b feature-xyz
+```
+🔹 Branches ermöglichen parallele Entwicklungen, ohne den `main`-Branch zu beeinflussen.
 
-#### **📝 Aufgabe:**
-1. Erstelle einen neuen Branch `experiment`.
-2. Wechsle in diesen Branch mit `git checkout experiment`.
-3. Erstelle eine neue Datei und committe sie in diesem Branch.
-
-**Zusatzaufgabe:**
-- Wechsel zurück zum `main`-Branch und merge den `experiment`-Branch.
-
----
+### **3.2 Änderungen in den Haupt-Branch mergen**
+Zurück zum Haupt-Branch wechseln:
+```bash
+git checkout main
+```
+Den Feature-Branch in `main` mergen:
+```bash
+git merge feature-xyz
+```
 
 ### **3.3 Merge-Konflikte lösen**
 Falls Änderungen in beiden Branches kollidieren, muss der Konflikt manuell behoben werden:
+1. Git zeigt betroffene Dateien mit Konfliktstellen (`<<<<<<<`, `=======`, `>>>>>>>`).
+2. Konflikte manuell editieren und bereinigen.
+3. Datei erneut zum Staging-Bereich hinzufügen:
+   ```bash
+   git add <dateiname>
+   ```
+4. Merge abschließen:
+   ```bash
+   git commit -m "Merge-Konflikte gelöst"
+   ```
 
-#### **📝 Aufgabe:**
-1. Erstelle zwei Branches, die dieselbe Datei bearbeiten.
-2. Führe ein Merge durch und beobachte einen möglichen Konflikt.
-3. Löse den Merge-Konflikt manuell und committe die bereinigte Datei.
+### **3.4 Pull Requests (PRs) auf GitHub erstellen**
+1. Änderungen in einem separaten Branch committen und pushen:
+   ```bash
+   git push origin feature-xyz
+   ```
+2. Auf GitHub eine Pull-Request (PR) erstellen.
+3. Änderungen überprüfen und ggf. Diskussion führen.
+4. PR in `main` mergen.
+
+🔹 PRs sind besonders wichtig für Zusammenarbeit in Teams, da sie vor dem Merge überprüft werden können.
 
 ---
 
-🚀 **Mit diesen Aufgaben kannst du Git und GitHub Schritt für Schritt lernen und vertiefen!**
+🚀 **Mit diesen Git- und GitHub-Befehlen bist du bestens für die Versionskontrolle gewappnet!**
