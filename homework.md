@@ -18,7 +18,21 @@ Diese Hausaufgabe soll dir helfen, das Arbeiten mit Git und GitHub weiter zu ver
 
 ---
 
-## **2. Arbeiten mit Branches**
+
+## **2. Verbindung mit GitHub**
+
+1. Erstelle ein neues Repository auf GitHub (ohne README, `.gitignore` oder Lizenzdateien).
+2. Verbinde dein lokales Repository mit GitHub:
+   ```bash
+   git remote add origin <URL-deines-GitHub-Repos>
+   ```
+3. Lade deine Änderungen nach GitHub hoch:
+   ```bash
+   git push -u origin master
+   ```
+---
+
+## **3. Zusatz: Arbeiten mit Branches (lokal)**
 
 1. Erstelle einen neuen Branch mit dem Namen `experimenteller-eintrag` (`git branch experimenteller-eintrag`).
 2. Wechsle in diesen Branch (`git checkout experimenteller-eintrag`).
@@ -30,30 +44,21 @@ Diese Hausaufgabe soll dir helfen, das Arbeiten mit Git und GitHub weiter zu ver
 **Zusatzaufgabe:** Falls es zu einem Merge-Konflikt kommt, löse ihn manuell und committe die bereinigte Version der Datei. D.h. die Dateien bearbeiten, adden, committen
 
 ---
+## **4. Zusatz: Arbeiten mit Branches (Github)**
 
-## **3. Verbindung mit GitHub**
-
-1. Erstelle ein neues Repository auf GitHub (ohne README, `.gitignore` oder Lizenzdateien).
-2. Verbinde dein lokales Repository mit GitHub:
-   ```bash
-   git remote add origin <URL-deines-GitHub-Repos>
-   ```
-3. Lade deine Änderungen nach GitHub hoch:
-   ```bash
-   git push -u origin master
-   ```
-5. Erstelle einen neuen Branch `feature/update` lokal mit:
+1. Erstelle einen neuen Branch `feature/update` lokal mit:
    ```bash
    git checkout -b feature/update
    ```
-6. Bearbeite eine Datei oder füge eine neue hinzu, committe die Änderungen und pushe sie zurück nach GitHub.
+2. Bearbeite eine Datei oder füge eine neue hinzu, committe die Änderungen und pushe sie zurück nach GitHub.
   ```bash
   git add .
   git commit -m "änderungen beschreiben"
   git push -u origin feature/update
   ```
-7. Wechsle zurück auf den Hauptbranch mit `git checkout master`
-8. **Zusatzaufgabe**: Wie kann ich den feature-Branch in meinen Hauptbranch mergen/zusammenführen? Hier gibt es verschiedene Möglichkeiten. Recherchiere und teste etwas aus :)
+3. Wechsle zurück auf den Hauptbranch mit `git checkout master`
+
+**Zusatzaufgabe**: Wie kann ich den feature-Branch in meinen Hauptbranch mergen/zusammenführen? Hier gibt es verschiedene Möglichkeiten. Recherchiere und teste etwas aus :)
 
 ---
 
